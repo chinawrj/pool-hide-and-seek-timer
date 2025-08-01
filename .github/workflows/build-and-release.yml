@@ -9,7 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write  # 允许创建release和上传文件
+      
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -36,47 +38,33 @@ jobs:
     - name: Build Release APK
       run: ./gradlew assembleRelease
       
-    - name: Sign APK (Debug keystore for demo)
+    - name: List build outputs
       run: |
-        # 为了演示，我们使用debug keystore签名
-        # 在生产环境中，你应该使用自己的签名密钥
-        $ANDROID_HOME/build-tools/*/apksigner sign \
-          --ks ~/.android/debug.keystore \
-          --ks-key-alias androiddebugkey \
-          --ks-pass pass:android \
-          --key-pass pass:android \
-          --out app/build/outputs/apk/release/app-release-signed.apk \
-          app/build/outputs/apk/release/app-release-unsigned.apk
-      continue-on-error: true  # 如果签名失败，继续使用未签名版本
+        echo "Build outputs:"
+        find app/build/outputs -name "*.apk" -type f
       
+        
     - name: Rename APK
       run: |
         # 获取版本标签
         VERSION=${GITHUB_REF#refs/tags/}
-        # 检查是否存在已签名的APK
-        if [ -f "app/build/outputs/apk/release/app-release-signed.apk" ]; then
-          cp app/build/outputs/apk/release/app-release-signed.apk pool-hide-and-seek-timer-${VERSION}.apk
-        else
-          cp app/build/outputs/apk/release/app-release-unsigned.apk pool-hide-and-seek-timer-${VERSION}.apk
-        fi
+        # 使用未签名的APK
+        cp app/build/outputs/apk/release/app-release-unsigned.apk pool-hide-and-seek-timer-${VERSION}.apk
+        echo "APK_FILE=pool-hide-and-seek-timer-${VERSION}.apk" >> $GITHUB_ENV
         
     - name: Get APK info
       run: |
         APK_FILE=$(ls pool-hide-and-seek-timer-*.apk)
         APK_SIZE=$(ls -lh $APK_FILE | awk '{print $5}')
-        echo "APK_FILE=$APK_FILE" >> $GITHUB_ENV
         echo "APK_SIZE=$APK_SIZE" >> $GITHUB_ENV
+        echo "Generated APK: $APK_FILE (Size: $APK_SIZE)"
         
     - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ github.ref }}
-        release_name: ${{ github.ref }} - 泳池捉迷藏计时器
+        name: ${{ github.ref_name }} - 泳池捉迷藏计时器
         body: |
-          # 🏊‍♂️ 泳池捉迷藏计时器 ${{ github.ref }}
+          # 🏊‍♂️ 泳池捉迷藏计时器 ${{ github.ref_name }}
           
           ## 📱 关于应用
           专为泳池捉迷藏游戏设计的计时器应用。参与者戴上眼镜后无法看到周围环境，只能在提示音响起期间短暂取下眼镜观察环境。
@@ -97,7 +85,7 @@ jobs:
           4. 找到并触碰到泳池中的其他人即获胜
           
           ## 📥 安装说明
-          1. 下载下方的APK文件（大小: ${{ env.APK_SIZE }}）
+          1. 下载下方的APK文件
           2. 在Android设备上启用"允许安装未知来源应用"
           3. 安装并运行应用
           
@@ -107,7 +95,7 @@ jobs:
           
           ---
           
-          # 🏊‍♂️ Pool Hide and Seek Timer ${{ github.ref }}
+          # 🏊‍♂️ Pool Hide and Seek Timer ${{ github.ref_name }}
           
           ## 📱 About
           A timer app specifically designed for pool hide-and-seek games. Players wear opaque goggles and can only briefly remove them to observe their surroundings when the alert sounds.
@@ -128,7 +116,7 @@ jobs:
           4. Win by finding and touching another person in the pool
           
           ## 📥 Installation
-          1. Download the APK file below (Size: ${{ env.APK_SIZE }})
+          1. Download the APK file below
           2. Enable "Install from unknown sources" on your Android device
           3. Install and run the app
           
@@ -139,15 +127,6 @@ jobs:
           ---
           
           **⚡ Built automatically by GitHub Actions**
+        files: pool-hide-and-seek-timer-*.apk
         draft: false
         prerelease: false
-        
-    - name: Upload APK to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ${{ env.APK_FILE }}
-        asset_name: ${{ env.APK_FILE }}
-        asset_content_type: application/vnd.android.package-archive
