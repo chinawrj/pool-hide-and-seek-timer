@@ -1,0 +1,96 @@
+# Android Studio IDE文件
+*.iml
+.gradle
+/local.properties
+
+# IDE配置文件 - 排除大部分IDE特定文件
+/.idea/
+!/.idea/codeStyles/
+!/.idea/gradle.xml
+!/.idea/misc.xml
+
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Android构建输出
+/app/build/
+/app/release/
+/app/debug/
+*.apk
+*.aab
+
+# Log文件
+*.log
+
+# Android Lint
+lint-report.html
+lint-report_files/
+lint-report.xml
+
+# Keystore文件 (不要提交到版本控制)
+*.jks
+*.keystore
+
+# Google Services (例如Firebase配置)
+google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# Android Profiling
+*.hprof
+
+# IntelliJ
+*.iws
+/out/
+
+# Maven
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
