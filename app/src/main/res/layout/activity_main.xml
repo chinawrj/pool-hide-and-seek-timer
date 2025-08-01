@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="定时提醒器"
+        android:text="@string/timer_title"
         android:textColor="@color/design_default_color_primary"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -56,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="秒"
+                android:text="@string/unit_seconds"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="等待开始"
+        android:text="@string/status_waiting"
         android:textColor="@color/design_default_color_on_background"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +102,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="提醒间隔 (秒)"
+                android:text="@string/interval_setting"
                 android:textColor="@color/design_default_color_on_background"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -148,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="提醒持续时间 (秒)"
+                android:text="@string/duration_setting"
                 android:textColor="@color/design_default_color_on_background"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -194,7 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="提示音选择"
+                android:text="@string/ringtone_setting"
                 android:textColor="@color/design_default_color_on_background"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -211,7 +211,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="默认通知音"
+                    android:text="@string/current_ringtone_default"
                     android:textColor="@color/design_default_color_on_background"
                     android:textSize="14sp"
                     android:ellipsize="end"
@@ -221,7 +221,7 @@
                     android:id="@+id/btnSelectRingtone"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="选择"
+                    android:text="@string/btn_select"
                     android:textSize="14sp"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
@@ -230,7 +230,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"
-                    android:text="试听"
+                    android:text="@string/btn_test"
                     android:textSize="14sp"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
@@ -256,7 +256,7 @@
             android:layout_height="56dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:text="开始"
+            android:text="@string/btn_start"
             android:textSize="18sp"
             app:cornerRadius="28dp" />
 
@@ -266,7 +266,7 @@
             android:layout_height="56dp"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:text="停止"
+            android:text="@string/btn_stop"
             android:textSize="18sp"
             app:cornerRadius="28dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton" />

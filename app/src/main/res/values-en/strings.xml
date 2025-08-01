@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Pool Hide-and-Seek Timer</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Game related strings -->
+    <string name="timer_title">Timer Reminder</string>
+    <string name="status_waiting">Waiting to Start</string>
+    <string name="status_running">Game in Progress...</string>
+    <string name="status_observation">Observation Time! %d sec</string>
+    <string name="status_stopped">Stopped</string>
+    
+    <!-- Settings section -->
+    <string name="interval_setting">Reminder Interval (sec)</string>
+    <string name="duration_setting">Observation Time (sec)</string>
+    <string name="ringtone_setting">Alert Sound Selection</string>
+    <string name="current_ringtone_default">Default Notification</string>
+    
+    <!-- Button text -->
+    <string name="btn_start">Start Game</string>
+    <string name="btn_stop">Stop Game</string>
+    <string name="btn_select">Select</string>
+    <string name="btn_test">Preview</string>
+    <string name="btn_test_stop">Stop</string>
+    
+    <!-- Toast messages -->
+    <string name="msg_ringtone_changed">Alert sound changed</string>
+    <string name="msg_cannot_open_picker">Cannot open ringtone picker</string>
+    <string name="msg_cannot_play_sound">Cannot play alert sound</string>
+    <string name="msg_cannot_init_player">Cannot initialize audio player</string>
+    
+    <!-- Time unit -->
+    <string name="unit_seconds">sec</string>
+    
+    <!-- Game description -->
+    <string name="game_description">Wear goggles to cover your eyes and find other players in the pool. Remove goggles to observe when the alert sounds!</string>
+    
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

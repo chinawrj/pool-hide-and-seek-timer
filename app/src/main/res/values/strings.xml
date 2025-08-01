@@ -1,12 +1,65 @@
 <resources>
-    <string name="app_name">定时提醒器</string>
+    <string name="app_name">泳池捉迷藏定时器</string>
+    <string name="app_name_en">Pool Hide-and-Seek Timer</string>
     <string name="action_settings">Settings</string>
+    
+    <!-- 游戏相关字符串 -->
+    <string name="timer_title">定时提醒器</string>
+    <string name="timer_title_en">Timer Reminder</string>
+    <string name="status_waiting">等待开始</string>
+    <string name="status_waiting_en">Waiting to Start</string>
+    <string name="status_running">游戏进行中...</string>
+    <string name="status_running_en">Game in Progress...</string>
+    <string name="status_observation">观察时间! %d 秒</string>
+    <string name="status_observation_en">Observation Time! %d sec</string>
+    <string name="status_stopped">已停止</string>
+    <string name="status_stopped_en">Stopped</string>
+    
+    <!-- 设置区域 -->
+    <string name="interval_setting">提醒间隔 (秒)</string>
+    <string name="interval_setting_en">Reminder Interval (sec)</string>
+    <string name="duration_setting">观察时间 (秒)</string>
+    <string name="duration_setting_en">Observation Time (sec)</string>
+    <string name="ringtone_setting">提示音选择</string>
+    <string name="ringtone_setting_en">Alert Sound Selection</string>
+    <string name="current_ringtone_default">默认通知音</string>
+    <string name="current_ringtone_default_en">Default Notification</string>
+    
+    <!-- 按钮文字 -->
+    <string name="btn_start">开始游戏</string>
+    <string name="btn_start_en">Start Game</string>
+    <string name="btn_stop">停止游戏</string>
+    <string name="btn_stop_en">Stop Game</string>
+    <string name="btn_select">选择</string>
+    <string name="btn_select_en">Select</string>
+    <string name="btn_test">试听</string>
+    <string name="btn_test_en">Preview</string>
+    <string name="btn_test_stop">停止</string>
+    <string name="btn_test_stop_en">Stop</string>
+    
+    <!-- 提示消息 -->
+    <string name="msg_ringtone_changed">提示音已更换</string>
+    <string name="msg_ringtone_changed_en">Alert sound changed</string>
+    <string name="msg_cannot_open_picker">无法打开铃声选择器</string>
+    <string name="msg_cannot_open_picker_en">Cannot open ringtone picker</string>
+    <string name="msg_cannot_play_sound">无法播放提示音</string>
+    <string name="msg_cannot_play_sound_en">Cannot play alert sound</string>
+    <string name="msg_cannot_init_player">无法初始化声音播放器</string>
+    <string name="msg_cannot_init_player_en">Cannot initialize audio player</string>
+    
+    <!-- 时间单位 -->
+    <string name="unit_seconds">秒</string>
+    <string name="unit_seconds_en">sec</string>
+    
+    <!-- 游戏说明 -->
+    <string name="game_description">戴上眼镜遮住双眼，在泳池中寻找其他玩家。提示音响起时可以摘下眼镜观察环境！</string>
+    <string name="game_description_en">Wear goggles to cover your eyes and find other players in the pool. Remove goggles to observe when the alert sounds!</string>
+    
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         if (!uriString.isNullOrEmpty()) {
             selectedRingtoneUri = Uri.parse(uriString)
         }
-        selectedRingtoneName = prefs.getString(PREF_RINGTONE_NAME, "默认通知音") ?: "默认通知音"
+        selectedRingtoneName = prefs.getString(PREF_RINGTONE_NAME, getString(R.string.current_ringtone_default)) ?: getString(R.string.current_ringtone_default)
     }
     
     private fun savePreferences() {
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         updateIntervalDisplay()
         updateDurationDisplay()
         updateCountdownDisplay(intervalSeconds)
-        updateStatus("等待开始")
+        updateStatus(getString(R.string.status_waiting))
         updateRingtoneDisplay()
     }
     
@@ -160,7 +160,7 @@ class MainActivity : AppCompatActivity() {
             mediaPlayer?.isLooping = true
         } catch (e: Exception) {
             e.printStackTrace()
-            showMessage("无法初始化声音播放器")
+            showMessage(getString(R.string.msg_cannot_init_player))
         }
     }
     
@@ -176,7 +176,7 @@ class MainActivity : AppCompatActivity() {
         try {
             startActivityForResult(intent, RINGTONE_PICKER_REQUEST_CODE)
         } catch (e: Exception) {
-            showMessage("无法打开铃声选择器")
+            showMessage(getString(R.string.msg_cannot_open_picker))
         }
     }
     
@@ -191,7 +191,7 @@ class MainActivity : AppCompatActivity() {
             testMediaPlayer = MediaPlayer.create(this, uri)
             testMediaPlayer?.start()
             
-            binding.btnTestRingtone.text = "停止"
+            binding.btnTestRingtone.text = getString(R.string.btn_test_stop)
             
             // 3秒后自动停止试听
             Handler(Looper.getMainLooper()).postDelayed({
@@ -200,7 +200,7 @@ class MainActivity : AppCompatActivity() {
             
         } catch (e: Exception) {
             e.printStackTrace()
-            showMessage("无法播放提示音")
+            showMessage(getString(R.string.msg_cannot_play_sound))
         }
     }
     
@@ -209,7 +209,7 @@ class MainActivity : AppCompatActivity() {
             testMediaPlayer?.stop()
             testMediaPlayer?.release()
             testMediaPlayer = null
-            binding.btnTestRingtone.text = "试听"
+            binding.btnTestRingtone.text = getString(R.string.btn_test)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -226,24 +226,24 @@ class MainActivity : AppCompatActivity() {
             selectedRingtoneName = if (uri != null) {
                 try {
                     val ringtone = RingtoneManager.getRingtone(this, uri)
-                    ringtone?.getTitle(this) ?: "自定义铃声"
+                    ringtone?.getTitle(this) ?: getString(R.string.current_ringtone_default)
                 } catch (e: Exception) {
-                    "自定义铃声"
+                    getString(R.string.current_ringtone_default)
                 }
             } else {
-                "默认通知音"
+                getString(R.string.current_ringtone_default)
             }
             
             updateRingtoneDisplay()
             updateMediaPlayer()
             savePreferences()
-            showMessage("提示音已更换")
+            showMessage(getString(R.string.msg_ringtone_changed))
         }
     }
     
     private fun startTimer() {
         isTimerRunning = true
-        updateStatus("定时器运行中...")
+        updateStatus(getString(R.string.status_running))
         updateButtonStates()
         
         countDownTimer = object : CountDownTimer((intervalSeconds * 1000).toLong(), 1000) {
@@ -271,7 +271,7 @@ class MainActivity : AppCompatActivity() {
         soundTimer?.cancel()
         stopNotificationSound()
         
-        updateStatus("已停止")
+        updateStatus(getString(R.string.status_stopped))
         updateCountdownDisplay(intervalSeconds)
         updateButtonStates()
     }
@@ -280,7 +280,7 @@ class MainActivity : AppCompatActivity() {
         if (isPlayingSound) return
         
         isPlayingSound = true
-        updateStatus("正在提醒中...")
+        updateStatus(getString(R.string.status_observation, durationSeconds))
         
         // 播放声音
         try {
@@ -293,13 +293,13 @@ class MainActivity : AppCompatActivity() {
         soundTimer = object : CountDownTimer((durationSeconds * 1000).toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 val secondsLeft = (millisUntilFinished / 1000).toInt()
-                updateStatus("提醒中... $secondsLeft 秒")
+                updateStatus(getString(R.string.status_observation, secondsLeft))
             }
             
             override fun onFinish() {
                 stopNotificationSound()
                 if (isTimerRunning) {
-                    updateStatus("定时器运行中...")
+                    updateStatus(getString(R.string.status_running))
                 }
             }
         }
