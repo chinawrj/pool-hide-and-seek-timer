@@ -207,27 +207,128 @@ app/
 └── ...
 ```
 
-## 版本历史
+## 版本历史 | Version History
 
-### v1.0 (当前版本)
-- ✅ 基础定时提醒功能
-- ✅ 可配置时间参数
-- ✅ 系统提示音选择
-- ✅ 设置自动保存
-- ✅ Material Design界面
+### v1.0.0 (当前版本 | Current Version)
+- ✅ 基础定时提醒功能 | Basic timed reminder functionality
+- ✅ 可配置时间参数 | Configurable timing parameters
+- ✅ 系统提示音选择 | System ringtone selection
+- ✅ 设置自动保存 | Auto-save settings
+- ✅ Material Design界面 | Material Design interface
+- ✅ 中英文双语支持 | Chinese and English bilingual support
+- ✅ GitHub Actions自动构建 | Automated GitHub Actions build
 
-## 计划功能
+## 📥 下载安装 | Download & Installation
 
-- [ ] 振动提醒选项
-- [ ] 后台运行支持
-- [ ] 多种提醒模式
-- [ ] 统计功能
-- [ ] 深色主题支持
+### GitHub Release (推荐 | Recommended)
+1. 访问 [Releases页面](https://github.com/chinawrj/pool-hide-and-seek-timer/releases)
+2. 下载最新版本的APK文件
+3. 在Android设备上启用"允许安装未知来源应用"
+4. 安装并运行应用
 
-## 开发者
+*Visit the [Releases page](https://github.com/chinawrj/pool-hide-and-seek-timer/releases), download the latest APK, enable "Install from unknown sources" on your Android device, and install.*
 
-项目由 GitHub Copilot 协助开发，专注于简洁实用的用户体验。
+### 系统要求 | System Requirements
+- Android 5.0 (API 21) 或更高版本 | or higher
+- 支持所有Android设备 | Compatible with all Android devices
 
-## 许可证
+## 🤝 用户反馈与贡献 | Feedback & Contributions
 
-本项目仅供学习和个人使用。
+### 📝 问题反馈 | Issue Reporting
+遇到问题或有新功能建议？欢迎提交Issue！
+
+*Encountered issues or have feature suggestions? Feel free to submit an Issue!*
+
+**如何提交Issue | How to Submit Issues:**
+1. 访问 [Issues页面](https://github.com/chinawrj/pool-hide-and-seek-timer/issues)
+2. 点击 "New Issue" 创建新的问题报告
+3. 选择合适的模板：
+   - 🐛 **Bug报告** - 报告应用异常或错误
+   - 💡 **功能请求** - 建议新功能或改进
+   - 🤔 **问题咨询** - 使用问题或疑问
+   - 📖 **文档改进** - 文档相关的建议
+
+*Visit the [Issues page](https://github.com/chinawrj/pool-hide-and-seek-timer/issues), click "New Issue", and choose the appropriate template for bug reports, feature requests, questions, or documentation improvements.*
+
+### 📋 Issue模板 | Issue Templates
+
+**Bug报告模板 | Bug Report Template:**
+```
+**问题描述 | Bug Description**
+简要描述遇到的问题
+
+**复现步骤 | Steps to Reproduce**
+1. 打开应用
+2. 进行某操作
+3. 观察到的问题
+
+**预期行为 | Expected Behavior**
+应该出现什么结果
+
+**设备信息 | Device Info**
+- Android版本：
+- 设备型号：
+- 应用版本：
+```
+
+**功能请求模板 | Feature Request Template:**
+```
+**功能描述 | Feature Description**
+详细描述希望添加的功能
+
+**使用场景 | Use Case**
+在什么情况下需要这个功能
+
+**建议实现 | Suggested Implementation**
+如果有想法，描述如何实现这个功能
+```
+
+### 🛠️ 贡献代码 | Code Contributions
+欢迎开发者参与项目贡献！
+
+*Developers are welcome to contribute to the project!*
+
+**贡献流程 | Contribution Process:**
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交更改 (`git commit -m 'Add amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 创建 Pull Request
+
+### 🌟 支持项目 | Support the Project
+如果这个项目对你有帮助，欢迎：
+
+*If this project helps you, feel free to:*
+
+- ⭐ 给项目加星标 | Star the project
+- 🐛 报告问题 | Report bugs  
+- 💡 提出建议 | Suggest features
+- 📢 分享给朋友 | Share with friends
+- 🤝 参与贡献 | Contribute code
+
+## 计划功能 | Planned Features
+
+- [ ] 振动提醒选项 | Vibration alert options
+- [ ] 后台运行支持 | Background operation support
+- [ ] 多种提醒模式 | Multiple reminder modes
+- [ ] 游戏统计功能 | Game statistics
+- [ ] 深色主题支持 | Dark theme support
+- [ ] 语音提示功能 | Voice prompt feature
+- [ ] 自定义提示音 | Custom ringtone support
+
+## 📞 联系方式 | Contact
+
+- **GitHub Issues**: [提交问题或建议](https://github.com/chinawrj/pool-hide-and-seek-timer/issues)
+- **项目主页**: [GitHub Repository](https://github.com/chinawrj/pool-hide-and-seek-timer)
+
+## 开发者 | Developers
+
+项目由 [@chinawrj](https://github.com/chinawrj) 开发，GitHub Copilot 协助编程，专注于简洁实用的用户体验。
+
+*Developed by [@chinawrj](https://github.com/chinawrj) with GitHub Copilot assistance, focusing on clean and practical user experience.*
+
+## 许可证 | License
+
+本项目采用 MIT 许可证，详见 [LICENSE](LICENSE) 文件。
+
+*This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.*

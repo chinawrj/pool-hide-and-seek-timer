@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📱 下载最新版本 | Download Latest Version
+    url: https://github.com/chinawrj/pool-hide-and-seek-timer/releases/latest
+    about: 下载最新的APK文件 | Download the latest APK file
+  - name: 🏊‍♂️ 项目主页 | Project Homepage  
+    url: https://github.com/chinawrj/pool-hide-and-seek-timer
+    about: 查看项目详情和文档 | View project details and documentation
